@@ -77,7 +77,7 @@ namespace AlgorithmsStage1
             bottomMargin = testImage1.Margin.Bottom;
 
             if (flagA == true)  leftMargin = leftMargin - 5.00;
-            if (flagD == true)  leftMargin = leftMargin + 5.0;
+            if (flagD == true)  leftMargin = leftMargin + 5.00;
             if (flagW == true)  topMargin = topMargin - 5.00;
             if (flagS == true)  topMargin = topMargin + 5.00;
 
@@ -87,22 +87,63 @@ namespace AlgorithmsStage1
             #endregion
 
             #region Lock_To_Grid
-            // Add code here
-           
+
+            leftMargin = testImage1.Margin.Left;
+            topMargin = testImage1.Margin.Top;
+            rightMargin = testImage1.Margin.Right;
+            bottomMargin = testImage1.Margin.Bottom;
+
+            if ((leftMargin + testImage1.Width) > TestGrid.Width) leftMargin = TestGrid.Width - testImage1.Width;
+            if ((leftMargin < 0)) leftMargin = 0;
+
+            if ((topMargin + testImage1.Height) > TestGrid.Height) topMargin = TestGrid.Height - testImage1.Height;
+            if ((topMargin < 0)) topMargin = 0;
+
+            testImage1.Margin = new Thickness(leftMargin, topMargin, rightMargin, bottomMargin);
+
             #endregion
 
             #region Move_Lock_To_Grid
+            
+            //code from lock to grid
+            leftMargin = testImage1.Margin.Left;
+            topMargin = testImage1.Margin.Top;
+            rightMargin = testImage1.Margin.Right;
+            bottomMargin = testImage1.Margin.Bottom;
 
-            // Add code here
+            if ((leftMargin + testImage1.Width) > TestGrid.Width) leftMargin = TestGrid.Width - testImage1.Width;
+            if ((leftMargin < 0)) leftMargin = 0;
 
+            if ((topMargin + testImage1.Height) > TestGrid.Height) topMargin = TestGrid.Height - testImage1.Height;
+            if ((topMargin < 0)) topMargin = 0;
+
+            //move lock to grid
             if (testFlag1X == true) leftMargin = leftMargin - 2;
-            // if the object has passed the right edge of the grid stop it
             if ((leftMargin + testImage1.Width) > TestGrid.Width)
             {
                 leftMargin = TestGrid.Width - testImage1.Width;
                 testFlag1X = true;
             }
 
+            if((leftMargin < 0))
+            {
+
+            }
+
+            //move lock to grid
+            if (testFlag1Y == true) topMargin = topMargin - 2;
+            if ((topMargin + testImage1.Height) > TestGrid.Height)
+            {
+                topMargin = TestGrid.Height - testImage1.Height;
+                testFlag1Y = true;
+            }
+
+            if ((topMargin < 0))
+            {
+
+            }
+            //code from lock to grid
+            testImage1.Margin = new Thickness(leftMargin, topMargin, rightMargin, bottomMargin);
             #endregion
 
             #region Follow

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AlgorithmsStage1"
         mc:Ignorable="d"
         Title="MainWindow" SizeChanged="TestWindow_SizeChanged" Width="800" Height="450" KeyDown="TestWindow_KeyDown">
-    <Grid x:Name="TestGrid" Width="800" Height="450"  >
+    <Grid x:Name="TestGrid" Margin="0,0,2,1" HorizontalAlignment="Right" Width="790" RenderTransformOrigin="0.5,0.498"  >
         <Grid.Background>
             <ImageBrush ImageSource="sea.png" Opacity="0.70"/>
         </Grid.Background>
